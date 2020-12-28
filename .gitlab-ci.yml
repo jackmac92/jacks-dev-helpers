@@ -1,0 +1,22 @@
+include:
+  - project: 'dropLoop/ci-templates'
+    ref: master
+    file: 'node/core.yml'
+  - project: 'dropLoop/ci-templates'
+    ref: master
+    file: 'node/pika-publish.yml'
+  - project: 'dropLoop/ci-templates'
+    ref: master
+    file: 'node/meta.yml'
+  - project: 'dropLoop/ci-templates'
+    ref: master
+    file: 'node/dependencies.yml'
+  - project: 'dropLoop/ci-templates'
+    ref: master
+    file: 'node/typescript.yml'
+
+stages:
+  - test
+  - build
+  - publish
+  - meta
