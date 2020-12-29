@@ -17,7 +17,7 @@ const STYLESHEETS = {
             .jacks-dev-helper-outer-wrap {
               display: flex
             }
-            .jacks-dev-helpers-interact-target:hover .jacks-dev-helpers-interact-widget {
+            .jacks-dev-helpers-interact-target:hover > .jacks-dev-helpers-interact-widget {
               display: inline-flex;
             }
             .jacks-dev-helpers-interact-widget:hover {
