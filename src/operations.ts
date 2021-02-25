@@ -8,6 +8,19 @@ import { extractTableAsJson } from "./helpers/extractTableInfo";
 
 const OPERATIONS: ReadonlyArray<Operation<any>> = [
   operation({
+    description: "Track last clicked element for menu commands",
+    condition: ALWAYS,
+    action: () => {
+        document.addEventListener("click", function clickListener(event) {
+            if (event.target instanceof HTMLElement) {
+                window.__JM_DEV_HELPERS__lastClickedElement = event.target
+            } else {
+                console.warn('Unexpected event target')
+            }
+        })
+    },
+  }),
+  operation({
     description: "Insert a copy tooltip on tables",
     condition: ALWAYS,
     action: () => {
