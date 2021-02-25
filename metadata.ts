@@ -10,7 +10,7 @@ export default function(_: BuildConfig): Metadata {
         name: U.name,
         version: U.version,
         description: U.description,
-        license: "GNU GPLv3",
+        license: "GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt",
         author: U.author,
         match: [
             `*://${U.hostname}/*`,
