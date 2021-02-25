@@ -4,6 +4,7 @@
         "paths": {
             "~src/*": [ "./src/*" ]
         },
+        "outDir": "tsbuild",
         "target": "es2020",
         "module": "esnext",
         "strict": true,
