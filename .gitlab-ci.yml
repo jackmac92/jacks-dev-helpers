@@ -4,9 +4,6 @@ include:
     file: 'node/core.yml'
   - project: 'dropLoop/ci-templates'
     ref: master
-    file: 'node/pika-publish.yml'
-  - project: 'dropLoop/ci-templates'
-    ref: master
     file: 'node/meta.yml'
   - project: 'dropLoop/ci-templates'
     ref: master
@@ -14,6 +11,22 @@ include:
   - project: 'dropLoop/ci-templates'
     ref: master
     file: 'node/typescript.yml'
+
+push to main repo:
+  image: jackzzz92/jq-httpie-git
+  stage: publish
+  script:
+    - |
+      for relativeFilePath in dist/*; do
+        filePath="$(basename -- "$relativeFilePath")"
+        fileContents="$(cat $relativeFilePath)"
+        httpVerb="POST"
+        if http "HEAD" "$CI_API_V4_URL/projects/24681114/repository/files/$filePath" ref==master Private-Token:"$GITLAB_TOKEN" > /dev/null; then
+          httpVerb="PUT"
+        fi
+        req_path="projects/24681114/repository/files/$filePath"
+        jo branch=master author_email="$GITLAB_USER_EMAIL" author_name="$GITLAB_USER_NAME" commit_message="api update $filePath" content="$fileContents" | http --check-status --body "$httpVerb" "$CI_API_V4_URL/$req_path" Private-Token:"$GITLAB_TOKEN"
+      done
 
 stages:
   - test
