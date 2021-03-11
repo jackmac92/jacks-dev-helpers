@@ -17,9 +17,22 @@ test:
     - never
 
 
+build:
+  stage: build
+  image: node:14
+  artifacts:
+    paths:
+      - ./dist
+  script:
+    - yarn install
+    - NODE_ENV=production yarn build
+
+
 push to main repo:
   image: jackzzz92/jq-httpie-git
   stage: publish
+  dependencies:
+    - build
   script:
     - |
       for relativeFilePath in dist/*; do
