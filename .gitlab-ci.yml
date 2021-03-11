@@ -12,6 +12,9 @@ include:
     ref: master
     file: 'node/typescript.yml'
 
+test:
+  when: never
+
 push to main repo:
   image: jackzzz92/jq-httpie-git
   stage: publish
