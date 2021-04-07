@@ -25,3 +25,4 @@ const OPERATIONS: ReadonlyArray<Operation<any>> = [
 ];
 
 export default OPERATIONS;
+
