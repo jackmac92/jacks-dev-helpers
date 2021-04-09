@@ -29,6 +29,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/greasemonkey@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/greasemonkey/-/greasemonkey-4.0.1.tgz#7496e54e795a7877f8acf3e004848037216a4b66"
+  integrity sha512-DWveA1NGl4qaGMZd/D5E+q9ioQyK4zVnAy82D0sZ6Y07IAl+/uQ94EOyaMi6Z4BhnfrgC8HQqNhZgu1GfztXJw==
+
 "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
@@ -1186,6 +1191,11 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+
+deep-entries@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/deep-entries/-/deep-entries-4.0.2.tgz#9df7bb2497c81957d6f9b5eb718833d52940e70f"
+  integrity sha512-aPzCHyBRiWjs9J7hzdZ343ZHkSuqVdANqALRJlR1x8GAHqojYai33R2h5ePw/fMe/nWjXrIvuPBDnuqp2De5Yg==
 
 define-properties@^1.1.3:
   version "1.1.3"
