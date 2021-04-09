@@ -11,7 +11,7 @@ const OPERATIONS: ReadonlyArray<Operation<any>> = [
     action: () => {
       const findKeyDeep = (obj: object, str: string) => {
         const flatObj = deepEntries(obj, delimitEntry);
-        return flatObj.filter(([k]: [string]) => k.includes(str));
+        return flatObj.filter(([k, _value]: [string, unknown]) => k.includes(str));
       };
       // @ts-expect-error
       window.findKeyDeep = findKeyDeep;
