@@ -68,6 +68,7 @@ export function htmlTreeSelection() {
     // override click handlers on any clickable element
     clickable.forEach((c) => {
       for (var i = 0; i < c.length; i++) {
+        // @ts-expect-error
         c[i].onclickBackup = c[i].onclick;
         c[i].addEventListener("click", clickHandler);
       }
@@ -108,7 +109,9 @@ export function htmlTreeSelection() {
     clickable.forEach((c) => {
       for (var i = 0; i < c.length; i++) {
         c[i].removeEventListener("click", clickHandler);
+        // @ts-expect-error
         c[i].addEventListener("click", c[i].onclickBackup);
+        // @ts-expect-error
         delete c[i].onclickBackup;
       }
     });
@@ -162,5 +165,6 @@ export function htmlTreeSelection() {
 }
 
 export function installHtmlTreeSelectionApi() {
+  // @ts-expect-error
   window.htmlTreeSelection = htmlTreeSelection;
 }
