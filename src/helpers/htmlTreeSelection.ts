@@ -26,9 +26,12 @@ export function htmlTreeSelection() {
     target.classList.add("html-tree-selection");
 
     if (target.classList.contains("html-tree-selection-overlay")) {
-      let iframe =
-        iframeOverlays[parseInt(target.dataset.index ?? "", 10)].iframe;
-      iframe.classList.add("html-tree-selection");
+      if (target.dataset.index) {
+        let iframe = iframeOverlays[parseInt(target.dataset.index, 10)].iframe;
+        iframe.classList.add("html-tree-selection");
+      } else {
+        console.warn("failed to find iframe");
+      }
     }
 
     e.stopPropagation();
@@ -54,7 +57,11 @@ export function htmlTreeSelection() {
     }
 
     if (target.classList.contains("html-tree-selection-overlay")) {
-      target = iframeOverlays[parseInt(target.dataset.index ?? "", 10)].iframe;
+      if (target.dataset.index) {
+        target = iframeOverlays[parseInt(target.dataset.index, 10)].iframe;
+      } else {
+        console.warn("failed to find iframe");
+      }
     }
 
     // TODO instead of removing target, return it (or possibly many)
