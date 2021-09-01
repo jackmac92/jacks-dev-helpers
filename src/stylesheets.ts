@@ -2,9 +2,9 @@ import { ALWAYS } from "userscripter/lib/environment";
 import { Stylesheets, stylesheet } from "userscripter/lib/stylesheets";
 
 const STYLESHEETS = {
-    general: stylesheet({
-        condition: ALWAYS,
-        css: `
+  general: stylesheet({
+    condition: ALWAYS,
+    css: `
             .jacks-dev-helpers-interact-widget {
               display: none;
               top: 0px;
@@ -23,12 +23,45 @@ const STYLESHEETS = {
             .jacks-dev-helpers-interact-widget:hover {
               text-decoration: underline;
             }
-             `
-    }),
+             `,
+  }),
+  htmlTreeSelectionOverlay: stylesheet({
+    condition: ALWAYS,
+    css: `
+:root {
+  --html-tree-selection-icon-url: ""
+}
+.html-tree-selection-cursor,
+.html-tree-selection-cursor a,
+.html-tree-selection-cursor input,
+.html-tree-selection-cursor select,
+.html-tree-selection-cursor button,
+.html-tree-selection-cursor div[role=button] {
+  cursor: var(--html-tree-selection-icon-url), crosshair !important;
+}
+
+.html-tree-selection {
+  filter: opacity(0.2);
+  box-shadow: inset 0px 0px 25px rgba(255,0,0,.5);
+}
+
+.html-tree-selection-overlay {
+  position: absolute;
+  z-index: 2147483647;
+  background:
+    no-repeat center/70% var(--html-tree-selection-icon-url),
+    linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    );
+}
+`,
+  }),
 } as const;
 // <span class="w3-badge">9</span>
 
 // This trick uncovers type errors in STYLESHEETS while retaining the static knowledge of its properties (so we can still write e.g. STYLESHEETS.foo):
-const _: Stylesheets = STYLESHEETS; void _;
+const _: Stylesheets = STYLESHEETS;
+void _;
 
 export default STYLESHEETS;

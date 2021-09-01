@@ -3,15 +3,25 @@ import { deepEntries, delimitEntry } from "deep-entries";
 import { Operation, operation } from "userscripter/lib/operations";
 import { addToClipboard } from "./helpers/utils";
 import { extractTableAsJson } from "./helpers/extractTableInfo";
+import { installHtmlTreeSelectionApi } from "./helpers/htmlTreeSelection";
 
 const OPERATIONS: ReadonlyArray<Operation<any>> = [
+  operation({
+    description: "Provide helper funcs for surfingkeys",
+    condition: ALWAYS,
+    action: () => {
+      installHtmlTreeSelectionApi();
+    },
+  }),
   operation({
     description: "Provide helper funcs for dev console",
     condition: ALWAYS,
     action: () => {
       const findKeyDeep = (obj: object, str: string) => {
         const flatObj = deepEntries(obj, delimitEntry);
-        return flatObj.filter(([k, _value]: [string, unknown]) => k.includes(str));
+        return flatObj.filter(([k, _value]: [string, unknown]) =>
+          k.includes(str)
+        );
       };
       // @ts-expect-error
       window.findKeyDeep = findKeyDeep;
