@@ -87,9 +87,9 @@ function generateElementHierarchy(element: HTMLElement): HtmlElContainer {
  */
 function elementHierarchyToDOMString(hierarchy: HtmlElContainer) {
   let selectorParts = [];
-  let currentObject = hierarchy;
-  let parentElement = document; // document will always be a parent
-  while (currentObject !== undefined) {
+  let currentObject: HtmlElContainer | null = hierarchy;
+  let parentElement: HTMLDocument | HTMLElement = document; // document will always be a parent
+  while (currentObject !== null) {
     let selectorPart = "";
     let uniqueByIdInDocument = false;
     let uniqueByIdInParent = false;
@@ -136,7 +136,7 @@ function elementHierarchyToDOMString(hierarchy: HtmlElContainer) {
         // Find all siblings of the same tag
         let childrenArray = Array.from(parentElement.children);
         let sameTagChildren = childrenArray.filter(
-          (child) => child.localName === currentObject.localName
+          (child) => child.localName === currentObject?.localName
         );
 
         if (sameTagChildren.length > 1) {
@@ -153,7 +153,7 @@ function elementHierarchyToDOMString(hierarchy: HtmlElContainer) {
 
     selectorParts.push(selectorPart);
     parentElement = currentObject.el;
-    currentObject = currentObject.child;
+    currentObject = currentObject.child ? currentObject.child : null;
   }
 
   return selectorParts.join(" > ");

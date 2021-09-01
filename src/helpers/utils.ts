@@ -60,10 +60,10 @@ export const appendBtnToElements = <Z extends HTMLElement>(
   });
 };
 
-export async function installEsModule() {
+export async function installEsModule(moduleUrl: string) {
   const script = document.createElement("script");
   script.setAttribute("type", "module");
-  script.setAttribute("src", chrome.extension.getURL("main.js"));
+  script.setAttribute("src", moduleUrl);
   const head =
     document.head ||
     document.getElementsByTagName("head")[0] ||
