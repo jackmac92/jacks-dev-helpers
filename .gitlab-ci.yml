@@ -1,21 +1,20 @@
 include:
-  - project: 'quickstart-templates/ci-templates'
+  - project: "quickstart-templates/ci-templates"
     ref: master
-    file: 'node/core.yml'
-  - project: 'quickstart-templates/ci-templates'
+    file: "node/core.yml"
+  - project: "quickstart-templates/ci-templates"
     ref: master
-    file: 'node/meta.yml'
-  - project: 'quickstart-templates/ci-templates'
+    file: "node/meta.yml"
+  - project: "quickstart-templates/ci-templates"
     ref: master
-    file: 'node/dependencies.yml'
-  - project: 'quickstart-templates/ci-templates'
+    file: "node/dependencies.yml"
+  - project: "quickstart-templates/ci-templates"
     ref: master
-    file: 'node/typescript.yml'
+    file: "node/typescript.yml"
 
 test:
   only:
     - never
-
 
 build:
   stage: build
@@ -26,7 +25,6 @@ build:
   script:
     - yarn install
     - NODE_ENV=production yarn build
-
 
 push to main repo:
   image: jackzzz92/jq-httpie-git
@@ -43,7 +41,7 @@ push to main repo:
           httpVerb="PUT"
         fi
         req_path="projects/24681114/repository/files/$filePath"
-        jq -n --rawfile code "$relativeFilePath" --arg commitmessage "api update $filePath" --arg authorname $GITLAB_USER_NAME --arg authoremail $GITLAB_USER_EMAIL '{ branch: "master", author_name: $authorname, author_email: $authoremail, commit_message: $commitmessage, content: $code }' | http --check-status --body "$httpVerb" "$CI_API_V4_URL/$req_path" Private-Token:"$GITLAB_TOKEN"
+        jq -n --rawfile code "$relativeFilePath" --arg commitmessage="api update $filePath" --arg authorname="$GITLAB_USER_NAME" --arg authoremail="$GITLAB_USER_EMAIL" '{ branch: "master", author_name: $authorname, author_email: $authoremail, commit_message: $commitmessage, content: $code }' | http --check-status --body "$httpVerb" "$CI_API_V4_URL/$req_path" Private-Token:"$GITLAB_TOKEN"
       done
 
 stages:
