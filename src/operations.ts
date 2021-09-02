@@ -1,3 +1,4 @@
+import parseGitUrl from "parse-github-url";
 import { ALWAYS } from "userscripter/lib/environment";
 import { deepEntries, delimitEntry } from "deep-entries";
 import { Operation, operation } from "userscripter/lib/operations";
@@ -6,6 +7,14 @@ import { extractTableAsJson } from "./helpers/extractTableInfo";
 import { htmlTreeSelection } from "./helpers/htmlTreeSelection";
 
 const OPERATIONS: ReadonlyArray<Operation<any>> = [
+  operation({
+    description: "Provide parse github url",
+    condition: ALWAYS,
+    action: () => {
+      // @ts-expect-error
+      window.parseGitUrl = parseGitUrl;
+    },
+  }),
   operation({
     description: "Provide helper funcs for surfingkeys",
     condition: ALWAYS,
