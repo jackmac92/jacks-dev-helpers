@@ -170,8 +170,3 @@ export function htmlTreeSelection() {
     },
   };
 }
-
-export function installHtmlTreeSelectionApi() {
-  // @ts-expect-error
-  window.htmlTreeSelection = htmlTreeSelection;
-}

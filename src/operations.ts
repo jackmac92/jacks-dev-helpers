@@ -3,14 +3,15 @@ import { deepEntries, delimitEntry } from "deep-entries";
 import { Operation, operation } from "userscripter/lib/operations";
 import { addToClipboard } from "./helpers/utils";
 import { extractTableAsJson } from "./helpers/extractTableInfo";
-import { installHtmlTreeSelectionApi } from "./helpers/htmlTreeSelection";
+import { htmlTreeSelection } from "./helpers/htmlTreeSelection";
 
 const OPERATIONS: ReadonlyArray<Operation<any>> = [
   operation({
     description: "Provide helper funcs for surfingkeys",
     condition: ALWAYS,
     action: () => {
-      installHtmlTreeSelectionApi();
+      // @ts-expect-error
+      window.htmlTreeSelection = htmlTreeSelection;
     },
   }),
   operation({
