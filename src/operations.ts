@@ -1,4 +1,4 @@
-import parseGitUrl from "parse-github-url";
+import parseGitUrl from "git-url-parse";
 import { ALWAYS } from "userscripter/lib/environment";
 import { deepEntries, delimitEntry } from "deep-entries";
 import { Operation, operation } from "userscripter/lib/operations";
