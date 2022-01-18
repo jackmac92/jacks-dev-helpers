@@ -17,12 +17,16 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
       overlay: HTMLDivElement;
     }[] = [];
 
+    let lastElement: HTMLElement = document.body;
+
     let overHandler = (e: Event) => {
       let target = e.target as HTMLElement;
 
       if (target === null) {
         return;
       }
+
+      lastElement = target;
 
       target.classList.add("html-tree-selection");
 
@@ -101,10 +105,58 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
       window.removeEventListener("resize", updateOverlayPositions);
     };
 
-    let keyHandler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        disable();
+    const selectNode = (el: Element) => {
+      return el.dispatchEvent(new MouseEvent("mouseover", { bubbles: true }));
+    };
+    const unselectNode = (el: Element) => {
+      return el.dispatchEvent(new MouseEvent("mouseout", { bubbles: true }));
+    };
+    const clearCurrentSelection = () => {
+      clickable.forEach((c) => {
+        for (var i = 0; i < c.length; i++) {
+          unselectNode(c[i]);
+        }
+      });
+    };
+    const moveSelectionToElement = (el: Element) => {
+      clearCurrentSelection();
+      selectNode(el);
+    };
+    const moveSelectionToParent = () => {
+      const parent = lastElement.parentElement;
+      if (parent !== null) {
+        moveSelectionToElement(parent);
       }
+    };
+    const moveSelectionToChild = () => {
+      const child = lastElement.children?.[0];
+      if (child !== null) {
+        moveSelectionToElement(child);
+      }
+    };
+    const moveSelectionToNextSibling = () => {
+      const sibling = lastElement.nextElementSibling;
+      if (sibling !== null) {
+        moveSelectionToElement(sibling);
+      }
+    };
+    const moveSelectionToPrevSibling = () => {
+      const sibling = lastElement.previousElementSibling;
+      if (sibling !== null) {
+        moveSelectionToElement(sibling);
+      }
+    };
+
+    let keyHandler = (e: KeyboardEvent) => {
+      const h = {
+        Escape: disable,
+        ArrowLeft: moveSelectionToParent,
+        ArrowRight: moveSelectionToChild,
+        ArrowUp: moveSelectionToNextSibling,
+        ArrowDown: moveSelectionToPrevSibling,
+      };
+      // @ts-ignore
+      h[e.key]();
     };
 
     let updateOverlayPositions = (_e: Event) => {
