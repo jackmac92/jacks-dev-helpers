@@ -29,6 +29,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/git-url-parse@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@types/git-url-parse/-/git-url-parse-9.0.1.tgz#1c7cc89527ca8b5afcf260ead3b0e4e373c43938"
+  integrity sha512-Zf9mY4Mz7N3Nyi341nUkOtgVUQn4j6NS4ndqEha/lOgEbTkHzpD7wZuRagYKzrXNtvawWfsrojoC1nhsQexvNA==
+
 "@types/greasemonkey@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/greasemonkey/-/greasemonkey-4.0.1.tgz#7496e54e795a7877f8acf3e004848037216a4b66"

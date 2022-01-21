@@ -129,8 +129,8 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
       }
     };
     const moveSelectionToChild = () => {
-      const child = lastElement.children?.[0];
-      if (child !== null) {
+      const child = lastElement.children && lastElement.children[0];
+      if (child && child !== null) {
         moveSelectionToElement(child);
       }
     };
