@@ -155,8 +155,10 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
         ArrowUp: moveSelectionToNextSibling,
         ArrowDown: moveSelectionToPrevSibling,
       };
+      console.debug(e.key);
       // @ts-ignore
-      h[e.key]();
+      const handler = h[e.key];
+      handler && handler();
     };
 
     let updateOverlayPositions = (_e: Event) => {
