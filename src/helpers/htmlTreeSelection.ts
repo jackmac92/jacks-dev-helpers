@@ -18,6 +18,7 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
     }[] = [];
 
     let lastElement: HTMLElement = document.body;
+    let shouldClearAll = false;
 
     let overHandler = (e: Event) => {
       let target = e.target as HTMLElement;
@@ -44,6 +45,11 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
     };
     let outHandler = (e: Event) => {
       let target = e.target as HTMLElement;
+
+      if (shouldClearAll) {
+        clearCurrentSelection();
+        shouldClearAll = false;
+      }
 
       if (target === null) {
         return;
@@ -119,6 +125,7 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
       });
     };
     const moveSelectionToElement = (el: Element) => {
+      shouldClearAll = true;
       clearCurrentSelection();
       selectNode(el);
     };
