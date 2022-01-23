@@ -112,10 +112,10 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
     };
 
     const selectNode = (el: Element) => {
-      return el.dispatchEvent(new MouseEvent("mouseover", { bubbles: false }));
+      return el.dispatchEvent(new MouseEvent("mouseover", { bubbles: true }));
     };
     const unselectNode = (el: Element) => {
-      return el.dispatchEvent(new MouseEvent("mouseout", { bubbles: false }));
+      return el.dispatchEvent(new MouseEvent("mouseout", { bubbles: true }));
     };
     const clearCurrentSelection = () => {
       clickable.forEach((c) => {
