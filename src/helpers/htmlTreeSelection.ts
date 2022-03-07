@@ -1,12 +1,13 @@
 export function htmlTreeSelection(): Promise<HTMLElement> {
   return new Promise((resolve) => {
-    // TODO select via keyboard?
+    // TODO I should change this, helper lib shouldn't limit consumer to document end
     // No need to wait for a 'DOMContentLoaded' event since the manifest
     // specifies:
     //
     //   "run_at": "document_end"
     //
 
+    // TODO select via keyboard?
     let clickable = [
       document.getElementsByTagName("a"),
       document.getElementsByTagName("button"),
