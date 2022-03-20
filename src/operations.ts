@@ -8,6 +8,17 @@ import { htmlTreeSelection } from "./helpers/htmlTreeSelection";
 
 const OPERATIONS: ReadonlyArray<Operation<any>> = [
   operation({
+    description: "Hacky automate page interaction",
+    condition: ALWAYS,
+    action: () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const autoEvalStr = urlParams.get("hackyDangerScript");
+      if (autoEvalStr === null) return;
+      const autoEvalCmd = atob(autoEvalStr);
+      eval(autoEvalCmd);
+    },
+  }),
+  operation({
     description: "Provide parse github url",
     condition: ALWAYS,
     action: () => {
