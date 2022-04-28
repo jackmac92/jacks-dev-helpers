@@ -15,7 +15,13 @@ const OPERATIONS: ReadonlyArray<Operation<any>> = [
       const autoEvalStr = urlParams.get("hackyDangerScript");
       if (autoEvalStr === null) return;
       const autoEvalCmd = atob(autoEvalStr);
-      eval(autoEvalCmd);
+      if (
+        !localStorage.getItem(`hackydanger-allowed-${atob}`) &&
+        confirm("Ok to run command?")
+      ) {
+        localStorage.setItem(`hackydanger-allowed-${atob}`, true);
+      }
+      localStorage.getItem(`hackydanger-allowed-${atob}`) && eval(autoEvalCmd);
     },
   }),
   operation({
