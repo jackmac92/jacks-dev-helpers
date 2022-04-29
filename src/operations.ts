@@ -19,7 +19,10 @@ const OPERATIONS: ReadonlyArray<Operation<any>> = [
         !localStorage.getItem(`hackydanger-allowed-${atob}`) &&
         confirm("Ok to run command?")
       ) {
-        localStorage.setItem(`hackydanger-allowed-${atob}`, true);
+        localStorage.setItem(
+          `hackydanger-allowed-${atob}`,
+          "surethisistottallysafe"
+        );
       }
       localStorage.getItem(`hackydanger-allowed-${atob}`) && eval(autoEvalCmd);
     },
