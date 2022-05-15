@@ -1,4 +1,5 @@
 {
+  "name": "jacks-dev-helpers",
   "private": true,
   "scripts": {
     "build-webpack-config": "tsc -p tsconfig.webpack.json",
