@@ -1,12 +1,5 @@
 export function htmlTreeSelection(): Promise<HTMLElement> {
   return new Promise((resolve) => {
-    // TODO I should change this, helper lib shouldn't limit consumer to document end
-    // No need to wait for a 'DOMContentLoaded' event since the manifest
-    // specifies:
-    //
-    //   "run_at": "document_end"
-    //
-
     // TODO select via keyboard?
     let clickable = [
       document.getElementsByTagName("a"),
@@ -19,7 +12,6 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
     }[] = [];
 
     let lastElement: HTMLElement = document.body;
-    let shouldClearAll = false;
 
     let overHandler = (e: Event) => {
       let target = e.target as HTMLElement;
@@ -47,16 +39,14 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
     let outHandler = (e: Event) => {
       let target = e.target as HTMLElement;
 
-      if (shouldClearAll) {
-        clearCurrentSelection();
-        shouldClearAll = false;
-      }
-
       if (target === null) {
         return;
       }
 
-      target.classList.remove("html-tree-selection");
+      const selectionClass = "html-tree-selection";
+      if (target.classList.contains(selectionClass)) {
+        target.classList.remove(selectionClass);
+      }
       e.stopPropagation();
     };
 
@@ -126,7 +116,6 @@ export function htmlTreeSelection(): Promise<HTMLElement> {
       });
     };
     const moveSelectionToElement = (el: Element) => {
-      shouldClearAll = true;
       clearCurrentSelection();
       selectNode(el);
     };
