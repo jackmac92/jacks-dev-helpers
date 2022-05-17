@@ -16,15 +16,16 @@ const OPERATIONS: ReadonlyArray<Operation<any>> = [
       if (autoEvalStr === null) return;
       const autoEvalCmd = atob(autoEvalStr);
       if (
-        !localStorage.getItem(`hackydanger-allowed-${atob}`) &&
+        !localStorage.getItem(`hackydanger-allowed-${autoEvalStr}`) &&
         confirm("Ok to run command?")
       ) {
         localStorage.setItem(
-          `hackydanger-allowed-${atob}`,
+          `hackydanger-allowed-${autoEvalStr}`,
           "surethisistottallysafe"
         );
       }
-      localStorage.getItem(`hackydanger-allowed-${atob}`) && eval(autoEvalCmd);
+      localStorage.getItem(`hackydanger-allowed-${autoEvalStr}`) &&
+        eval(autoEvalCmd);
     },
   }),
   operation({
