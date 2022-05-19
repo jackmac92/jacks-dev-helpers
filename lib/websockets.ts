@@ -15,7 +15,7 @@ const commonMessageHandlers = {
   },
 };
 
-function createSocketServer(actionId, params = {}) {
+export default function createSocket(actionId, params = {}) {
   const ws = new WebSocket("ws://100.112.120.25:5792", {
     perMessageDeflate: false,
   });
