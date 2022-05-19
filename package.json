@@ -19,6 +19,7 @@
     "userscripter": "^1.5.0",
     "webpack": "^4",
     "webpack-cli": "^4.3.0",
+    "ws": "^8.6.0",
     "zepto": "^1.2.0"
   },
   "devDependencies": {
