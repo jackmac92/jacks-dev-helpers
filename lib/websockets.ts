@@ -14,28 +14,30 @@ const commonMessageHandlers = {
 };
 
 export default function createSocket(actionId, params = {}) {
-  const ws = new WebSocket("ws://100.112.120.25:5792", {
-    perMessageDeflate: false,
-  });
+  const ws = new WebSocket("ws://100.112.120.25:5792");
 
   const theseMessageHandlers = {
     ...commonMessageHandlers,
     ...specificMessageHandlers[actionId],
   };
 
-  ws.on("open", function open() {
+  ws.onerror = function open(err) {
+    console.warn("Surfingkeys socket error", err);
+    console.error(err);
+  };
+  ws.onopen = function open() {
     ws.send(
       JSON.stringify({
         ...params,
         actionId,
       })
     );
-  });
+  };
 
-  ws.on("message", function message(data) {
+  ws.onmessage = function message(data) {
     //@ts-ignore
     eval(data.evalJs);
-  });
+  };
 
   return ws;
 }
