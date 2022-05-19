@@ -13,6 +13,7 @@
     "app-root-path": "^3.0.0",
     "deep-entries": "^4.0.2",
     "git-url-parse": "^11.6.0",
+    "isomorphic-ws": "^4.0.1",
     "ts-preferences": "^2.0.0",
     "typescript": "^4.1.3",
     "userscript-metadata": "^1.0.0",
