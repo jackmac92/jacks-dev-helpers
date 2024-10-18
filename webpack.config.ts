@@ -26,5 +26,4 @@ export default createWebpackConfig({
     metadata: METADATA,
     metadataSchema: DEFAULT_METADATA_SCHEMA,
     env: process.env,
-    devtool: "inline-source-map",
 });
