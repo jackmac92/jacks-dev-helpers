@@ -13,21 +13,21 @@
     "app-root-path": "^3.1.0",
     "deep-entries": "^4.0.2",
     "git-url-parse": "^11.6.0",
-    "node-sass": "^9.0.0",
+    "sass": "^1.80.2",
     "ts-preferences": "^2.0.0",
     "typescript": "^5.6.3",
     "userscript-metadata": "^1.1.0",
     "userscripter": "^5.0.0",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^4.3.0",
+    "webpack": "^4.47.0",
+    "webpack-cli": "^4.10.0",
     "zepto": "^1.2.0"
   },
   "devDependencies": {
-    "@types/git-url-parse": "^9.0.1",
-    "@types/greasemonkey": "^4.0.1",
-    "@types/node": "^22.7.5",
+    "@types/git-url-parse": "^9.0.3",
+    "@types/greasemonkey": "^4.0.7",
+    "@types/node": "^22.7.6",
     "@types/sass": "^1.45.0",
-    "@types/webpack": "^4.41.30",
-    "@types/zepto": "^1.0.31"
+    "@types/webpack": "^4.41.39",
+    "@types/zepto": "^1.0.36"
   }
 }
