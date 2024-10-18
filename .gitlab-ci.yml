@@ -3,6 +3,5 @@ include:
     ref: master
     file: "node/userscript.yml"
 
-test:
-  only:
-    - never
+check-types:
+  allow_failure: true
