@@ -53,7 +53,7 @@ const STYLESHEETS = {
   z-index: 2147483647;
   background:
     no-repeat center/70% var(--html-tree-selection-icon-url),
-    var(--html-tree-selection-overlay-bg);
+    color-mix(in srgb, currentColor 85%, transparent);
   mix-blend-mode: difference;
 }
 
