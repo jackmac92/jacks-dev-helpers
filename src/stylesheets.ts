@@ -29,8 +29,11 @@ const STYLESHEETS = {
     condition: ALWAYS,
     css: `
 :root {
-  --html-tree-selection-icon-url: ""
+  --html-tree-selection-icon-url: "";
+  --html-tree-selection-highlight: rgba(255, 0, 0, 0.5);
+  --html-tree-selection-overlay-bg: rgba(128, 128, 128, 0.85);
 }
+
 .html-tree-selection-cursor,
 .html-tree-selection-cursor a,
 .html-tree-selection-cursor input,
@@ -42,7 +45,7 @@ const STYLESHEETS = {
 
 .html-tree-selection {
   filter: opacity(0.2);
-  box-shadow: inset 0px 0px 25px rgba(255,0,0,.5);
+  box-shadow: inset 0px 0px 25px var(--html-tree-selection-highlight);
 }
 
 .html-tree-selection-overlay {
@@ -50,10 +53,14 @@ const STYLESHEETS = {
   z-index: 2147483647;
   background:
     no-repeat center/70% var(--html-tree-selection-icon-url),
-    linear-gradient(
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.85)
-    );
+    var(--html-tree-selection-overlay-bg);
+  mix-blend-mode: difference;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --html-tree-selection-highlight: rgba(0, 255, 255, 0.5);
+  }
 }
 `,
   }),
