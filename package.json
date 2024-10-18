@@ -26,7 +26,6 @@
     "@types/git-url-parse": "^9.0.3",
     "@types/greasemonkey": "^4.0.7",
     "@types/node": "^22.7.6",
-    "@types/sass": "^1.45.0",
     "@types/webpack": "^4.41.39",
     "@types/zepto": "^1.0.36"
   }
