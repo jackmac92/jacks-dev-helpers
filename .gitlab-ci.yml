@@ -1,7 +1,4 @@
 include:
   - project: "quickstart-templates/ci-templates"
-    ref: master
+    ref: v0.13.5
     file: "node/userscript.yml"
-
-check-types:
-  allow_failure: true
