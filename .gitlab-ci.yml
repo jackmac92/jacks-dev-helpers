@@ -1,6 +1,6 @@
 include:
   - project: "quickstart-templates/ci-templates"
-    ref: v13.2.0
+    ref: master
     file: "node/userscript.yml"
 
 test:
