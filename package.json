@@ -28,7 +28,6 @@
     "@types/node": "^22.7.6",
     "@types/sass": "^1.45.0",
     "@types/webpack": "^4.41.39",
-    "@types/zepto": "^1.0.36",
-    "escape-string-regexp": "^5.0.0"
+    "@types/zepto": "^1.0.36"
   }
 }
