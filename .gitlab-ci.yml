@@ -5,3 +5,9 @@ include:
 
 check-types:
   allow_failure: true
+
+build:
+  artifacts:
+    when: on_failure
+    paths:
+      - .userscripter-temp/
