@@ -1,7 +1,7 @@
 import parseGitUrl from "git-url-parse";
-import { ALWAYS } from "userscripter/lib/environment";
 import { deepEntries, delimitEntry } from "deep-entries";
-import { Operation, operation } from "userscripter/lib/operations";
+import { ALWAYS } from "userscripter/run-time/environment";
+import { Operation, operation } from "userscripter/run-time/operations";
 import { addToClipboard } from "./helpers/utils";
 import { extractTableAsJson } from "./helpers/extractTableInfo";
 import { htmlTreeSelection } from "./helpers/htmlTreeSelection";
@@ -21,7 +21,7 @@ const OPERATIONS: ReadonlyArray<Operation<any>> = [
       ) {
         localStorage.setItem(
           `hackydanger-allowed-${autoEvalStr}`,
-          "surethisistottallysafe"
+          "surethisistottallysafe",
         );
       }
       localStorage.getItem(`hackydanger-allowed-${autoEvalStr}`) &&
@@ -51,7 +51,7 @@ const OPERATIONS: ReadonlyArray<Operation<any>> = [
       const findKeyDeep = (obj: object, str: string) => {
         const flatObj = deepEntries(obj, delimitEntry);
         return flatObj.filter(([k, _value]: [string, unknown]) =>
-          k.includes(str)
+          k.includes(str),
         );
       };
       // @ts-expect-error
