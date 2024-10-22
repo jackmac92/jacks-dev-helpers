@@ -12,7 +12,7 @@
     "@types/app-root-path": "^1.2.8",
     "app-root-path": "^3.1.0",
     "deep-entries": "^4.0.2",
-    "git-url-parse": "^11.6.0",
+    "git-url-parse": "^15.0.0",
     "sass": "^1.80.2",
     "ts-preferences": "^2.0.0",
     "typescript": "^5.6.3",
