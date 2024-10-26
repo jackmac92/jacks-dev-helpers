@@ -1,4 +1,4 @@
 include:
   - project: "quickstart-templates/ci-templates"
     ref: master
-    file: "node/userscript.yml"
+    file: "entrypoint/userscript.yml"
