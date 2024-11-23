@@ -11,7 +11,7 @@
     "@typed/compose": "^1.0.0",
     "@types/app-root-path": "^1.2.8",
     "app-root-path": "^3.1.0",
-    "deep-entries": "^4.0.2",
+    "deep-entries": "^5.0.0",
     "git-url-parse": "^16.0.0",
     "sass": "^1.80.2",
     "ts-preferences": "^2.0.0",

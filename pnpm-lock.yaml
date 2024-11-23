@@ -18,8 +18,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       deep-entries:
-        specifier: ^4.0.2
-        version: 4.0.2
+        specifier: ^5.0.0
+        version: 5.0.2
       git-url-parse:
         specifier: ^16.0.0
         version: 16.0.0
@@ -582,8 +582,9 @@ packages:
     resolution: {integrity: sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==}
     engines: {node: '>=0.10'}
 
-  deep-entries@4.0.2:
-    resolution: {integrity: sha512-aPzCHyBRiWjs9J7hzdZ343ZHkSuqVdANqALRJlR1x8GAHqojYai33R2h5ePw/fMe/nWjXrIvuPBDnuqp2De5Yg==}
+  deep-entries@5.0.2:
+    resolution: {integrity: sha512-8RKOhfWq2BYzJjcqS34DNTO8hsvlHKpRqt+Ify8J6y6xtapQQ50Tv/ow7+pbJ/Bs+hPl8Uq5k+LDVquvmzQFKg==}
+    engines: {node: '>=16'}
 
   define-data-property@1.1.4:
     resolution: {integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==}
@@ -2528,7 +2529,7 @@ snapshots:
 
   decode-uri-component@0.2.2: {}
 
-  deep-entries@4.0.2: {}
+  deep-entries@5.0.2: {}
 
   define-data-property@1.1.4:
     dependencies:
