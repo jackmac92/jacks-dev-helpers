@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@types/app-root-path':
-        specifier: ^1.2.8
-        version: 1.2.8
+        specifier: ^3.0.0
+        version: 3.1.0
       app-root-path:
         specifier: ^3.1.0
         version: 3.1.0
@@ -149,8 +149,9 @@ packages:
   '@typed/compose@1.0.0':
     resolution: {integrity: sha512-ElBfbJJ3TiSHbC98iPGiPrMv7yZgE1p7HuWM8v03oG5vkp1aSaWV33WgohB2IOca9fpxPcNydF0r9wJFJl4/YA==}
 
-  '@types/app-root-path@1.2.8':
-    resolution: {integrity: sha512-l12miuN6JXAi3yuADZNhRKbyN7IIyaUP9hFVZ/BbHhWYpBkHLbOaX2WkQoXGJyAgMcP9iZ0S9+tz/FN40VrwWQ==}
+  '@types/app-root-path@3.1.0':
+    resolution: {integrity: sha512-wZsDCkNcLUSGR+mM6NXy8tj4XUius6wBvbt4TaqZNmp9S+PNocQg9AwjS71tabcHWVWVag0O+lX+FkyuCdO8Ng==}
+    deprecated: This is a stub types definition. app-root-path provides its own type definitions, so you do not need this installed.
 
   '@types/git-url-parse@9.0.3':
     resolution: {integrity: sha512-Wrb8zeghhpKbYuqAOg203g+9YSNlrZWNZYvwxJuDF4dTmerijqpnGbI79yCuPtHSXHPEwv1pAFUB4zsSqn82Og==}
@@ -1938,7 +1939,9 @@ snapshots:
 
   '@typed/compose@1.0.0': {}
 
-  '@types/app-root-path@1.2.8': {}
+  '@types/app-root-path@3.1.0':
+    dependencies:
+      app-root-path: 3.1.0
 
   '@types/git-url-parse@9.0.3': {}
 
