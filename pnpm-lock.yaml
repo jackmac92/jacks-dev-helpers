@@ -36,8 +36,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       userscripter:
-        specifier: ^5.0.0
-        version: 5.0.0(ts-preferences@2.0.0)(typescript@5.6.3)(webpack-cli@4.10.0)
+        specifier: ^6.0.0
+        version: 6.0.0(ts-preferences@2.0.0)(typescript@5.6.3)(webpack-cli@4.10.0)
       webpack:
         specifier: ^4.47.0
         version: 4.47.0(webpack-cli@4.10.0)
@@ -164,6 +164,9 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
+  '@types/node@16.18.31':
+    resolution: {integrity: sha512-KPXltf4z4g517OlVJO9XQ2357CYw7fvuJ3ZuBynjXC5Jos9i+K7LvFb7bUIwtJXSZj0vTp9Q6NJBSQpkwwO8Zw==}
+
   '@types/node@22.7.6':
     resolution: {integrity: sha512-/d7Rnj0/ExXDMcioS78/kf1lMzYk4BZV8MZGTBKzTGZ6/406ukkbYlIsZmMPhcR5KlkunDHQLrtAVmSq7r+mSw==}
 
@@ -179,9 +182,6 @@ packages:
 
   '@types/tapable@1.0.12':
     resolution: {integrity: sha512-bTHG8fcxEqv1M9+TD14P8ok8hjxoOCkfKc8XXLaaD05kI7ohpeI956jtDOD3XHKBQrlyPughUtzm1jtVhHpA5Q==}
-
-  '@types/terser-webpack-plugin@2.2.3':
-    resolution: {integrity: sha512-IqmP1OBzNyx9ZNj/3Svf0QFN+cJUrtECceVLENlXhXX4snmkgxo8n3U3wMJv1c066FXqwP+iorzCZCJhshytsw==}
 
   '@types/uglify-js@3.17.5':
     resolution: {integrity: sha512-TU+fZFBTBcXj/GpDpDaBmgWk/gn96kMZ+uocaFUlV2f8a6WdMzzI44QBCmGcCiYR0Y6ZlNRiyUyKKt5nl/lbzQ==}
@@ -1780,8 +1780,8 @@ packages:
   userscript-metadata@1.1.0:
     resolution: {integrity: sha512-xXQ51tozn80XtYE+oU1PXcZI7TrujysrHtqA16EjPy6H++teXjBctstdVh2udnD6vpH2rSaUxkzz5o+N2W0CFA==}
 
-  userscripter@5.0.0:
-    resolution: {integrity: sha512-lIvXdu16SFu3UqhfgincC6FPGsIxx7CW27ZAGkKfneYkqgOswEuJleI6R76d2M+C9vHNL/OibGpJktkuQak0mA==}
+  userscripter@6.0.0:
+    resolution: {integrity: sha512-y0KFhrMgxh3o9PNjGHWNK7u9J9tJJPmLJ/LVnFWgbD8Z4OvHzCbEwa/7PsaL+xdI5/ggQ+xLtAOx8kLHjV/otA==}
     peerDependencies:
       ts-preferences: ^2.0.0
 
@@ -1948,6 +1948,8 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
+  '@types/node@16.18.31': {}
+
   '@types/node@22.7.6':
     dependencies:
       undici-types: 6.19.8
@@ -1961,11 +1963,6 @@ snapshots:
   '@types/source-list-map@0.1.6': {}
 
   '@types/tapable@1.0.12': {}
-
-  '@types/terser-webpack-plugin@2.2.3':
-    dependencies:
-      '@types/webpack': 4.41.39
-      terser: 4.8.1
 
   '@types/uglify-js@3.17.5':
     dependencies:
@@ -3867,10 +3864,10 @@ snapshots:
       is-ip: 3.1.0
       is-valid-domain: 0.1.6
 
-  userscripter@5.0.0(ts-preferences@2.0.0)(typescript@5.6.3)(webpack-cli@4.10.0):
+  userscripter@6.0.0(ts-preferences@2.0.0)(typescript@5.6.3)(webpack-cli@4.10.0):
     dependencies:
+      '@types/node': 16.18.31
       '@types/sass': 1.45.0
-      '@types/terser-webpack-plugin': 2.2.3
       '@types/webpack': 4.41.39
       css-loader: 3.6.0(webpack@4.47.0)
       lines-unlines: 1.0.0
