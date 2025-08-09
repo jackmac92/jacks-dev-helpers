@@ -49,8 +49,8 @@ importers:
         version: 1.2.0
     devDependencies:
       '@types/git-url-parse':
-        specifier: ^9.0.3
-        version: 9.0.3
+        specifier: ^16.0.0
+        version: 16.0.2
       '@types/greasemonkey':
         specifier: ^4.0.7
         version: 4.0.7
@@ -152,8 +152,9 @@ packages:
   '@types/app-root-path@1.2.8':
     resolution: {integrity: sha512-l12miuN6JXAi3yuADZNhRKbyN7IIyaUP9hFVZ/BbHhWYpBkHLbOaX2WkQoXGJyAgMcP9iZ0S9+tz/FN40VrwWQ==}
 
-  '@types/git-url-parse@9.0.3':
-    resolution: {integrity: sha512-Wrb8zeghhpKbYuqAOg203g+9YSNlrZWNZYvwxJuDF4dTmerijqpnGbI79yCuPtHSXHPEwv1pAFUB4zsSqn82Og==}
+  '@types/git-url-parse@16.0.2':
+    resolution: {integrity: sha512-STa+QaJtPbqwtioDIncRyft1xXrsTIYW0KkS6RS6l++NiDaQxqgsIkNp2Jf9nJ1KnCGPOvWaR1iO+B7LkM8+ew==}
+    deprecated: This is a stub types definition. git-url-parse provides its own type definitions, so you do not need this installed.
 
   '@types/greasemonkey@4.0.7':
     resolution: {integrity: sha512-DuYBRf/T4zixO/xhQ3eicZCBjjOgbSSXuHP5XkLNf/UBayrJpBniP9il/AQaPy0lffl4Bco48zgHL+pZmQ6Q0A==}
@@ -1940,7 +1941,9 @@ snapshots:
 
   '@types/app-root-path@1.2.8': {}
 
-  '@types/git-url-parse@9.0.3': {}
+  '@types/git-url-parse@16.0.2':
+    dependencies:
+      git-url-parse: 16.0.0
 
   '@types/greasemonkey@4.0.7': {}
 
